@@ -1,10 +1,18 @@
 package com.example.myclient;
 
-public class Note {
 
+import com.google.firebase.firestore.Exclude;
+
+import javax.annotation.Nullable;
+
+public class Note {
+    private String docId;
     private String email;
     private String password;
 
+    public Note(){
+
+    }
 
     public Note(String email, String password) {
         this.email = email;
@@ -27,4 +35,8 @@ public class Note {
         this.password = password;
     }
 
+    @Exclude
+    public void setDocId(String docId) {
+        this.docId = docId;
+    }
 }
